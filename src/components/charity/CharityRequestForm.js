@@ -7,7 +7,7 @@ export default props => {
     const { addCharityRequest, updateCharityRequest, charityRequests } = useContext(CharityRequestContext)
     const [charityRequest, setCharityRequest] = useState({})
     const { businesses } = useContext(BusinessContext)
-    const business= useRef(0)
+    const business = useRef(0)
     const businessName = useRef("")
 
     const editMode = props.match.params.hasOwnProperty("charityRequestId")
@@ -38,12 +38,15 @@ export default props => {
     }, [charityRequests, businesses])
 
     const constructNewCharityRequest = () => {
+
+        const businessId = parseInt(business.current.value)
+
         if (editMode) {
             updateCharityRequest({
                 id: charityRequest.id,
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
-                businessId: business.id,
+                businessId: businessId,
                 userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
                 .then(() => props.history.push("/donor"))
@@ -51,7 +54,7 @@ export default props => {
             addCharityRequest({
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
-                businessId: business.id,
+                businessId: businessId,
                 userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
             .then(() => props.history.push("/donor"))

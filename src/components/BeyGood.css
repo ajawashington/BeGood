@@ -3,19 +3,33 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body,
+body:after{
+    content: "";
+    background: url(/src/components/imgs/beyonceinsta-4.jpg) no-repeat center center fixed; 
+    background-size: 100% 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+      
+  }
 button,
 input,
 select,
 textarea {
 	color: #404040;
-	font-family: Montserrat ;
+	font-family: Optima;
 	font-size: 14px;
 	line-height: 1.5;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Montserrat ', serif;
+  font-family: 'Optima ', serif;
   letter-spacing: 2px;
 }
 

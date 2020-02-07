@@ -13,13 +13,13 @@ export const UserProvider = (props) => {
     const [users, setUsers] = useState([])
 
     const getUsers = () => {
-        return fetch("http://localhost:444/users?_expand=user")
+        return fetch("http://localhost:4444/users")
             .then(res => res.json())
             .then(setUsers)
     }
 
     const addUser = newUser => {
-      return fetch("http://localhost:444/users", {
+      return fetch("http://localhost:4444/users", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -30,7 +30,7 @@ export const UserProvider = (props) => {
   }
 
     const deleteUser = user => {
-        return fetch(`http://localhost:444/users/${user.id}`, {
+        return fetch(`http://localhost:4444/users/${user.id}`, {
             method: "DELETE",
         })
             .then(getUsers)
