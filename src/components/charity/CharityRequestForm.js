@@ -2,13 +2,15 @@ import React, { useContext, useState, useEffect, useRef } from "react"
 import { CharityRequestContext } from "./CharityRequestProvider"
 import "./CharityRequests.css"
 import { BusinessContext } from "../businesses/BusinessProvider"
+// import { DonorContext } from "../donations/DonationProvider"
 
 export default props => {
     const { addCharityRequest, updateCharityRequest, charityRequests } = useContext(CharityRequestContext)
-    const [charityRequest, setCharityRequest] = useState({})
     const { businesses } = useContext(BusinessContext)
+    const [charityRequest, setCharityRequest] = useState({})
     const business = useRef(0)
     const businessName = useRef("")
+    // const { donors } = useContext(DonorContext)
 
     const editMode = props.match.params.hasOwnProperty("charityRequestId")
 
@@ -19,17 +21,16 @@ export default props => {
         */
         const newCharityRequest = Object.assign({}, charityRequest)
         newCharityRequest[evt.target.name] = evt.target.value
-        console.log(newCharityRequest)
         setCharityRequest(newCharityRequest)
     }
 
     const setDefaults = () => {
         if (editMode) {
             const charityRequestId = parseInt(props.match.params.charityRequestId)
+            const businessId = parseInt(props.match.params.businessId)
             const selectedCharityRequest = charityRequests.find(a => a.id === charityRequestId) || {}
-            setCharityRequest(selectedCharityRequest)
-            console.log(selectedCharityRequest)
-        
+            const selectedBusiness = businesses.find(b => b.id === businessId) || {}
+            setCharityRequest(selectedCharityRequest, selectedBusiness)
         }
     }
 
@@ -103,7 +104,7 @@ export default props => {
                     </fieldset>
                     <fieldset>
                 <div className="form-group">
-                    <label htmlFor="business">business: </label>
+                    <label htmlFor="business">Business </label>
                     <select
                         defaultValue=""
                         name="business"
@@ -116,6 +117,7 @@ export default props => {
                             <option key={b.id} value={b.id}>
                                 {b.businessName}
                             </option>
+                              
                         ))}
                     </select>
                 </div>

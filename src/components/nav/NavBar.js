@@ -9,7 +9,7 @@ export default (props) => {
                 <Link className="navbar__link" to="/">beyGood Dashboard</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/profile">Profile</Link>
+                <Link className="navbar__link" to="/user">Profile</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/charity">I Need Help</Link>

@@ -1,23 +1,24 @@
 import React, { useContext, useRef } from "react"
 import "./CharityRequests.css"
 import { CharityRequestContext } from "./CharityRequestProvider";
+import { DonationContext } from "../donations/DonationProvider";
 
 
 export default ({ charityRequest, business,  history }) => {
     const { deleteCharityRequest, updateCharityRequest } = useContext(CharityRequestContext)
- 
+    const { addDonation } = useContext(DonationContext)
+  
 
       const completedCharityRequest = () => {
-            
-            updateCharityRequest({
+
+            addDonation({
                 id: charityRequest.id,
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
                 userId: charityRequest.userId,
-                business: charityRequest.businessId, 
+                businessId: charityRequest.businessId, 
                 donorId: parseInt(localStorage.getItem("beyGood_user"), 10),
             })
-
         }
 
     const activeUserRequests = (charityRequest, history) => {
@@ -51,6 +52,7 @@ export default ({ charityRequest, business,  history }) => {
     
     onClick={() => {
        completedCharityRequest(charityRequest)
+       deleteCharityRequest(charityRequest)
     
 
     }}>DONATE</button>
