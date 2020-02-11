@@ -34,7 +34,7 @@ export default props => {
 
     useEffect(() => {
         setDefaults()
-    }, [charityRequests])
+    }, [charityRequests, businesses])
 
     const constructNewCharityRequest = () => {
 

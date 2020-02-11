@@ -7,23 +7,39 @@ import { UserProvider } from "./users/UserProvider"
 import { BusinessProvider } from "./businesses/BusinessProvider"
 import { DonationProvider } from "./donations/DonationProvider"
 import UserList from "./users/UserList"
+import DonationList from "./donations/DonationList"
+import BusinessList from "./businesses/BusinessList"
+import { BusinessTypeProvider } from "./businesses/BusinessTypeProvider"
+import BusinessForm from "./businesses/BusinessForm"
 
 
 export default props => {
     return (
         <>
       <UserProvider>
-        
-        <DonationProvider>
-          <UserProvider>
-      <Route exact path="/user" render={props => <UserList {...props} />} />
-          </UserProvider>
-        </DonationProvider>
+      
+      
+          <DonationProvider>
+        <UserProvider>
+
+        {/* <Route exact path="/user" render={props => <UserList {...props} />} /> */}
+        <Route exact path="/user" render={props => <DonationList {...props} />} />
+            
+            </UserProvider>
+                </DonationProvider>
+
+              <BusinessProvider>
+                <BusinessTypeProvider>
+
+      <Route exact path="/businesses" render={props => <BusinessList {...props} />} />
+      <Route path="/businesses/create" render={props => <BusinessForm {...props} />} />
+                </BusinessTypeProvider>
+            </BusinessProvider>
+
 
 
       <CharityRequestProvider>
-        
-            <DonationProvider>
+          <DonationProvider>
               <BusinessProvider>
 
       <Route exact path="/donor" render={props => <CharityRequestList {...props} />} />
@@ -34,6 +50,9 @@ export default props => {
                </BusinessProvider>
             </DonationProvider>
         </CharityRequestProvider>
+
+
+        
       </UserProvider>
         
         </>

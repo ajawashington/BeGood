@@ -5,7 +5,7 @@ import { DonationContext } from "../donations/DonationProvider";
 
 
 export default ({ charityRequest, business,  history }) => {
-    const { deleteCharityRequest, updateCharityRequest } = useContext(CharityRequestContext)
+    const { deleteCharityRequest } = useContext(CharityRequestContext)
     const { addDonation } = useContext(DonationContext)
   
 
@@ -53,9 +53,6 @@ export default ({ charityRequest, business,  history }) => {
     
        completedCharityRequest(charityRequest)
        deleteCharityRequest(charityRequest)
-
-       
-    
 
     }}>DONATE</button>
         )

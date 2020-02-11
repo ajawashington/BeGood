@@ -1,49 +1,27 @@
-import React, { useContext } from "react"
-import { DonationContext } from "../donations/DonationProvider"
-import Donation from "../donations/Donation"
-import "./Users.css"
-import { UserContext } from "../users/UserProvider"
+// import React, { useContext } from "react"
+// import { UserContext } from "./UserProvider"
+// import User from "./User"
+// // import "./users.css"
+// import { DonationContext } from "../donations/DonationProvider"
 
-export default (props) => {
-    const { donations } = useContext(DonationContext)
-    const { users } = useContext(UserContext)
+// export default () => {
+//     const { users } = useContext(UserContext)
+//     const { donations } = useContext(DonationContext)
 
-
-    const donationsArray = []
-
-    const activeUserDonations = donations.filter(a => {
-        return a.userId === parseInt(localStorage.getItem("beyGood_user"), 10)
-    })
-
-    activeUserDonations.map(a => {
-        return donationsArray.push(a)
-    })
-
-    const activeUsersArray = users.filter( f => {
-        return f.activeUserId === parseInt(localStorage.getItem("beyGood_user"), 10)
-    })
-
-    const userDonations = activeUsersArray.map(u =>{
-        return donations.filter(d => {
-            return d.userId === u.userId 
-        })
-    })
-    const singleUserDonation = userDonations.map (u => {
-        return u.map(ud => donationsArray.push(ud))
-    })
-
-    console.log(donationsArray)
-    return (
-        <>
-            <h1>Donations</h1>
-            <div className="Donations">
-
-                {
-                    donationsArray.map(d => {
-                        return <Donation key={d.id} Donation={d} {...props} />
-                    })
-                }
-            </div>
-        </>
-    )
-}
+//     return (
+//         <div className="users">
+//             {
+//                 users.map(u => {
+//                     const donationsHere = donations.filter(
+//                         (donation) => {
+//                             return u.id === donation.userId
+//                         }
+//                     )
+//                     return <User key={u.id}
+//                                      Donations={donationsHere}
+//                                      User={u} />
+//                 })
+//             }
+//         </div>
+//     )
+// }

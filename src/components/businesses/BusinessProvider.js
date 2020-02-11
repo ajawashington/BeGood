@@ -29,6 +29,17 @@ export const BusinessProvider = (props) => {
             .then(getBusinesses)
     }
 
+    const updateBusiness = business => {
+        return fetch(`http://localhost:4444/businesses/${business.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(business)
+        })
+            .then(getBusinesses)
+    }
+
     /*
         Load all animals when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -43,7 +54,7 @@ export const BusinessProvider = (props) => {
 
     return (
         <BusinessContext.Provider value={{
-            businesses, addBusiness
+            businesses, addBusiness, updateBusiness
         }}>
             {props.children}
         </BusinessContext.Provider>
