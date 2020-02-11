@@ -6,41 +6,35 @@ import CharityRequestForm from "./charity/CharityRequestForm"
 import { UserProvider } from "./users/UserProvider"
 import { BusinessProvider } from "./businesses/BusinessProvider"
 import { DonationProvider } from "./donations/DonationProvider"
-import { UserList } from "./users/UserList"
+import UserList from "./users/UserList"
 
 
 export default props => {
     return (
         <>
-        <UserProvider>
-          
+      <UserProvider>
+        
+        <DonationProvider>
           <UserProvider>
-
-        <Route exact path="/user" render={props => <UserList {...props} />} />
+      <Route exact path="/user" render={props => <UserList {...props} />} />
           </UserProvider>
+        </DonationProvider>
+
 
       <CharityRequestProvider>
-          <BusinessProvider>
+        
             <DonationProvider>
+              <BusinessProvider>
 
+      <Route exact path="/donor" render={props => <CharityRequestList {...props} />} />
+      <Route exact path="/charity" render={props => <CharityRequestForm {...props} />} />
+      <Route path="/charity/edit/:charityRequestId(\d+)" 
+        render={props => <CharityRequestForm {...props} />} />
 
-
-        <Route exact path="/donor" render={props => <CharityRequestList {...props} />} />
-
-        <Route exact path="/charity" render={props => <CharityRequestForm {...props} />} />
-            <Route
-               path="/charity/edit/:charityRequestId(\d+)"
-               render={props => <CharityRequestForm {...props} />}
-               />
-               {/* <Route path="/charity/:charityRequestId(\d+)" render={
-                            props => <CharityRequestDetails {...props} />
-                          } /> */}
-                          </DonationProvider>
                </BusinessProvider>
-      </CharityRequestProvider>
-      
-
-        </UserProvider>
+            </DonationProvider>
+        </CharityRequestProvider>
+      </UserProvider>
         
         </>
     )

@@ -9,8 +9,6 @@ export default props => {
     const { businesses } = useContext(BusinessContext)
     const [charityRequest, setCharityRequest] = useState({})
     const business = useRef(0)
-    const businessName = useRef("")
-    // const { donors } = useContext(DonorContext)
 
     const editMode = props.match.params.hasOwnProperty("charityRequestId")
 
@@ -36,7 +34,7 @@ export default props => {
 
     useEffect(() => {
         setDefaults()
-    }, [charityRequests, businesses])
+    }, [charityRequests])
 
     const constructNewCharityRequest = () => {
 
@@ -109,13 +107,12 @@ export default props => {
                         defaultValue=""
                         name="business"
                         ref={business}
-                        ref={businessName}
                         className="form-control"
                     >
                         <option value="0">Select a Business</option>
                         {businesses.map(b => (
                             <option key={b.id} value={b.id}>
-                                {b.businessName}
+                                {b.name}
                             </option>
                               
                         ))}

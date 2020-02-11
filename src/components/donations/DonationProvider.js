@@ -34,7 +34,7 @@ export const DonationProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  Donation APPLICATION STATE CHANGED  ****")
+        console.log("****  DONATION APPLICATION STATE CHANGED  ****")
     }, [donations])
 
     return (
