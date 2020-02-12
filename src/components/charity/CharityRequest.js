@@ -16,9 +16,19 @@ export default ({ charityRequest, business,  history }) => {
                 amount: charityRequest.amount,
                 userId: charityRequest.userId,
                 businessId: charityRequest.businessId, 
-                donor: parseInt(localStorage.getItem("beyGood_user"), 10),
+                donorId: parseInt(localStorage.getItem("beyGood_user"), 10),
             })
         }
+        // const updatedCharityRequest = () => {
+        //     addDonation({
+        //         id: charityRequest.id,
+        //         issue: charityRequest.issue,
+        //         amount: charityRequest.amount,
+        //         userId: charityRequest.userId,
+        //         businessId: charityRequest.businessId, 
+        //         donorId: parseInt(localStorage.getItem("beyGood_user"), 10),
+        //     })
+        // }
        
     const activeUserRequests = (charityRequest, history ) => {
 
@@ -29,6 +39,7 @@ export default ({ charityRequest, business,  history }) => {
     <div> 
       <button className= "active__request" 
             onClick={() => {
+                
                history.push(`/charity/edit/${charityRequest.id}`)
             }}>Edit</button>
     
@@ -64,7 +75,7 @@ export default ({ charityRequest, business,  history }) => {
                 <h3 className="charityRequest__tagName">{charityRequest.user.tagName}</h3>
                 <div className="charityRequest__issue">{charityRequest.issue}</div>
                 <div className="charityRequest__amount">{ charityRequest.amount }</div>
-                {/* <div className="charityRequest__business">{ charityRequest.business.name }</div> */}
+                <div className="charityRequest__business">{ charityRequest.business.name }</div>
                 {activeUserRequests(charityRequest, history)}
 
             </section>

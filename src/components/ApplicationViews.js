@@ -6,11 +6,12 @@ import CharityRequestForm from "./charity/CharityRequestForm"
 import { UserProvider } from "./users/UserProvider"
 import { BusinessProvider } from "./businesses/BusinessProvider"
 import { DonationProvider } from "./donations/DonationProvider"
-import UserList from "./users/UserList"
+// import UserList from "./users/UserList"
 import DonationList from "./donations/DonationList"
 import BusinessList from "./businesses/BusinessList"
 import { BusinessTypeProvider } from "./businesses/BusinessTypeProvider"
 import BusinessForm from "./businesses/BusinessForm"
+import DonationDetails from "./donations/DonationDetails"
 
 
 export default props => {
@@ -21,10 +22,19 @@ export default props => {
       
           <DonationProvider>
         <UserProvider>
+          <BusinessProvider>
+            <CharityRequestProvider>
+
+
 
         {/* <Route exact path="/user" render={props => <UserList {...props} />} /> */}
         <Route exact path="/user" render={props => <DonationList {...props} />} />
+        <Route path="/donations/:DonationId(\d+)" render={
+          props => <DonationDetails {...props} />
+        } />
             
+        </CharityRequestProvider>
+          </BusinessProvider>
             </UserProvider>
                 </DonationProvider>
 

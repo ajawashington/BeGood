@@ -8,9 +8,13 @@ export default props => {
     const { addCharityRequest, updateCharityRequest, charityRequests } = useContext(CharityRequestContext)
     const { businesses } = useContext(BusinessContext)
     const [charityRequest, setCharityRequest] = useState({})
+    // const [business, setBusiness] = useState({})
     const business = useRef(0)
 
+
     const editMode = props.match.params.hasOwnProperty("charityRequestId")
+
+
 
     const handleControlledInputChange = (evt) => {
         /*
@@ -20,15 +24,18 @@ export default props => {
         const newCharityRequest = Object.assign({}, charityRequest)
         newCharityRequest[evt.target.name] = evt.target.value
         setCharityRequest(newCharityRequest)
+
+        // const newBusiness = Object.assign({}, business)
+        // newBusiness[evt.target.name] = evt.target.value
+        // setBusiness(newBusiness)
     }
 
     const setDefaults = () => {
         if (editMode) {
+          
             const charityRequestId = parseInt(props.match.params.charityRequestId)
-            const businessId = parseInt(props.match.params.businessId)
             const selectedCharityRequest = charityRequests.find(a => a.id === charityRequestId) || {}
-            const selectedBusiness = businesses.find(b => b.id === businessId) || {}
-            setCharityRequest(selectedCharityRequest, selectedBusiness)
+            setCharityRequest(selectedCharityRequest)
         }
     }
 
@@ -104,10 +111,11 @@ export default props => {
                 <div className="form-group">
                     <label htmlFor="business">Business </label>
                     <select
-                        defaultValue=""
-                        name="business"
+                        value={charityRequest.businessId}
+                        name="businessId"
                         ref={business}
                         className="form-control"
+                        onChange={handleControlledInputChange}
                     >
                         <option value="0">Select a Business</option>
                         {businesses.map(b => (
