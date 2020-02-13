@@ -2,13 +2,11 @@ import React, { useContext, useState, useEffect, useRef } from "react"
 import { CharityRequestContext } from "./CharityRequestProvider"
 import "./CharityRequests.css"
 import { BusinessContext } from "../businesses/BusinessProvider"
-// import { DonorContext } from "../donations/DonationProvider"
 
 export default props => {
     const { addCharityRequest, updateCharityRequest, charityRequests } = useContext(CharityRequestContext)
     const { businesses } = useContext(BusinessContext)
     const [charityRequest, setCharityRequest] = useState({})
-    // const [business, setBusiness] = useState({})
     const business = useRef(0)
 
 
@@ -24,10 +22,6 @@ export default props => {
         const newCharityRequest = Object.assign({}, charityRequest)
         newCharityRequest[evt.target.name] = evt.target.value
         setCharityRequest(newCharityRequest)
-
-        // const newBusiness = Object.assign({}, business)
-        // newBusiness[evt.target.name] = evt.target.value
-        // setBusiness(newBusiness)
     }
 
     const setDefaults = () => {
@@ -53,7 +47,7 @@ export default props => {
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
                 businessId: businessId,
-                userId: parseInt(localStorage.getItem("beyGood_user"), 10)
+                userId: parseInt(localStorage.getItem("beyGood_user"), 10),
             })
                 .then(() => props.history.push("/donor"))
         } else {
@@ -61,7 +55,7 @@ export default props => {
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
                 businessId: businessId,
-                userId: parseInt(localStorage.getItem("beyGood_user"), 10)
+                userId: parseInt(localStorage.getItem("beyGood_user"), 10),
             })
             .then(() => props.history.push("/donor"))
         }

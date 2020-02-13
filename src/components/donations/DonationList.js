@@ -12,9 +12,6 @@ export default (props) => {
     const activeUserRequests = charityRequests.filter(cr => cr.userId === parseInt(localStorage.getItem("beyGood_user")) )
     const activeUserCompletedRequests = donations.filter(dr => dr.userId === parseInt(localStorage.getItem("beyGood_user")) )
 
-    console.log(activeUserDonations)
-    console.log(activeUserRequests)
-
     return (
         <>
             <h1>Recent Donations</h1>
@@ -31,7 +28,7 @@ export default (props) => {
                  }) }
                  
             </div>
-            <h1>REQUESTS: DONATED</h1>
+            <h1>REQUESTS: COMPLETED</h1>
             <div className="requests">
                 {activeUserCompletedRequests.map(dr => {
                     return <Donation key={dr.id} donation={dr} {...props} />

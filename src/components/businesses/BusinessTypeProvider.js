@@ -13,33 +13,23 @@ export const BusinessTypeProvider = (props) => {
     const [businessTypes, setBusinessTypes] = useState([])
 
     const getBusinessTypes = () => {
-        return fetch("http://localhost:4444/businessTypes")
+        return fetch("http://localhost:4444/businesses?_expand=businessType")
             .then(res => res.json())
             .then(setBusinessTypes)
     }
 
-    const addBusinessType = businessType => {
-        return fetch("http://localhost:4444BusinessTypes", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(businessType)
-        })
-            .then(getBusinessTypes)
-
-    }
     useEffect(() => {
         getBusinessTypes()
     }, [])
 
     useEffect(() => {
-        console.log("****  BUSINESS TYPE APPLICATION STATE CHANGED  ****")
+        // console.log("****  BUSINESS TYPE APPLICATION STATE CHANGED  ****")
     }, [businessTypes])
 
     return (
         <BusinessTypeContext.Provider value={{
-            businessTypes, addBusinessType
+            businessTypes
+            // , addBusinessType, updateBusinessType
         }}>
             {props.children}
         </BusinessTypeContext.Provider>

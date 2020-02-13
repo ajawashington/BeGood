@@ -17,9 +17,6 @@ export default (props) => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/donor">I Want To Help</Link>
             </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/businesses">Partners</Link>
-            </li>
 
 
 {
