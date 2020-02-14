@@ -2,9 +2,10 @@ import React, { useContext } from "react"
 import "./CharityRequests.css"
 import { CharityRequestContext } from "./CharityRequestProvider";
 import { DonationContext } from "../donations/DonationProvider";
+import { DonorContext } from "../donations/DonorProvider";
 
 
-export default ({ charityRequest, donor, history, match }) => {
+export default ({ charityRequest, history, match }) => {
     const { deleteCharityRequest } = useContext(CharityRequestContext)
     const { addDonation } = useContext(DonationContext)
   
@@ -14,6 +15,7 @@ export default ({ charityRequest, donor, history, match }) => {
                 id: charityRequest.id,
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
+                item: charityRequest.item,
                 userId: charityRequest.userId,
                 businessId: charityRequest.businessId, 
                 donorId: parseInt(localStorage.getItem("beyGood_user"), 10),
@@ -24,7 +26,7 @@ export default ({ charityRequest, donor, history, match }) => {
        
 
 
-    const activeUserRequests = (charityRequest, donor, history ) => {
+    const activeUserRequests = (charityRequest, history ) => {
 
         // here is how our Charity Request will be render when it is being called 
         // and what events it will be listening to 
@@ -35,15 +37,13 @@ export default ({ charityRequest, donor, history, match }) => {
     return(
     
     <div> 
-      <button className= "active__request" 
-            onClick={() => {
-               
+       <button className="active__charityRequest" onClick={() => {
                history.push(`/charity/edit/${charityRequest.id}`)
             }}>Edit</button>
-    
+
         <button onClick={
             () => {
-                if(match.url === "/user"){
+                if(match.url === "/"){
                     deleteCharityRequest(charityRequest)
                 }
                 // this is here so that requests can be deleted on active user Profile page
@@ -55,7 +55,7 @@ export default ({ charityRequest, donor, history, match }) => {
                 }
                
             }}>
-        Delete Request
+        Delete
         </button>
     
     </div>
@@ -63,14 +63,14 @@ export default ({ charityRequest, donor, history, match }) => {
     )} else { 
     
         return (
-            <button className="donate" id={ `charityRequest--${charityRequest.donor}` }
+          <button className="donate" id={ `charityRequest--${charityRequest.donor}` }
     
     onClick={
         () => {
          
-
-               completedCharityRequest(charityRequest)
+                completedCharityRequest(charityRequest)
                 deleteCharityRequest(charityRequest)
+            
            
         }}>DONATE</button>
         )
@@ -79,10 +79,11 @@ export default ({ charityRequest, donor, history, match }) => {
             return(
                 // here is what will render on each card on every page 
             <section className="charityRequest">
-                <h3 className="charityRequest__tagName">{charityRequest.user.tagName}</h3>
-                <div className="charityRequest__issue">{charityRequest.issue}</div>
-                <div className="charityRequest__amount">{ charityRequest.amount }</div>
-                <div className="charityRequest__business">{ charityRequest.business.name }</div>
+                <h3 className="charityRequest__tagName">{charityRequest.user.tagName} needs {charityRequest.item}. </h3>
+                <div>The issue is "{charityRequest.issue}"</div>
+                {/* <div className="charityRequest__issue">{charityRequest.issue}</div> */}
+                <div className="charityRequest__amount">This will cost { charityRequest.amount } at { charityRequest.business.name }</div>
+                {/* <div className="charityRequest__business">at { charityRequest.business.name }</div> */}
                 {activeUserRequests(charityRequest, history)}
 
             </section>

@@ -13,7 +13,7 @@ export const DonorProvider = (props) => {
     const [donors, setDonors] = useState([])
 
     const getDonors = () => {
-        return fetch("http://localhost:4444/donors")
+        return fetch("http://localhost:4444/donors?_expand=user")
             .then(res => res.json())
             .then(setDonors)
     }

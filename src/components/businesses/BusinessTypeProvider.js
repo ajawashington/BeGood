@@ -13,7 +13,7 @@ export const BusinessTypeProvider = (props) => {
     const [businessTypes, setBusinessTypes] = useState([])
 
     const getBusinessTypes = () => {
-        return fetch("http://localhost:4444/businesses?_expand=businessType")
+        return fetch("http://localhost:4444/businessTypes")
             .then(res => res.json())
             .then(setBusinessTypes)
     }

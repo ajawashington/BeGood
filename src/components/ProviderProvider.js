@@ -11,15 +11,15 @@ export default (props) => {
         <>
             <UserProvider>
                 <CharityRequestProvider>
-                    <BusinessProvider>
                         <DonationProvider>
-                            <BusinessTypeProvider>
                                 <DonorProvider>
+                            <BusinessTypeProvider>
+                                <BusinessProvider>
                             {props.children}
-                                </DonorProvider>
+                                </BusinessProvider>
                             </BusinessTypeProvider>
+                                </DonorProvider>
                         </DonationProvider>
-                    </BusinessProvider>
                 </CharityRequestProvider>
             </UserProvider>
         </>

@@ -5,17 +5,18 @@ import "./NavBar.css"
 export default (props) => {
     return (
         <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/">beyGood Dashboard</Link>
+            
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/">Home</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/user">Profile</Link>
+                <Link className="navbar__link" to="/charity">Charity</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/charity">I Need Help</Link>
+                <Link className="navbar__link" to="/donor">Donor</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/donor">I Want To Help</Link>
+                <Link className="navbar__link" to="/business">Partners</Link>
             </li>
 
 

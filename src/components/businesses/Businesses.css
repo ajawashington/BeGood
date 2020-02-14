@@ -1,0 +1,15 @@
+.businesses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .business {
+      flex-basis: 28%;
+      margin: 1em;
+      padding: 1em;
+      border: 8px solid  goldenrod;
+        background-color: pink;
+        font-family: Optima;
+  }
+

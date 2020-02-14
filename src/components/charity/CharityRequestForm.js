@@ -2,11 +2,13 @@ import React, { useContext, useState, useEffect, useRef } from "react"
 import { CharityRequestContext } from "./CharityRequestProvider"
 import "./CharityRequests.css"
 import { BusinessContext } from "../businesses/BusinessProvider"
+// import { DonorContext } from "../donations/DonationProvider"
 
 export default props => {
     const { addCharityRequest, updateCharityRequest, charityRequests } = useContext(CharityRequestContext)
     const { businesses } = useContext(BusinessContext)
     const [charityRequest, setCharityRequest] = useState({})
+    // const [business, setBusiness] = useState({})
     const business = useRef(0)
 
 
@@ -22,6 +24,10 @@ export default props => {
         const newCharityRequest = Object.assign({}, charityRequest)
         newCharityRequest[evt.target.name] = evt.target.value
         setCharityRequest(newCharityRequest)
+
+        // const newBusiness = Object.assign({}, business)
+        // newBusiness[evt.target.name] = evt.target.value
+        // setBusiness(newBusiness)
     }
 
     const setDefaults = () => {
@@ -46,16 +52,18 @@ export default props => {
                 id: charityRequest.id,
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
+                item: charityRequest.item,
                 businessId: businessId,
-                userId: parseInt(localStorage.getItem("beyGood_user"), 10),
+                userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
                 .then(() => props.history.push("/donor"))
         } else {
             addCharityRequest({
                 issue: charityRequest.issue,
                 amount: charityRequest.amount,
+                item: charityRequest.item,
                 businessId: businessId,
-                userId: parseInt(localStorage.getItem("beyGood_user"), 10),
+                userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
             .then(() => props.history.push("/donor"))
         }
@@ -100,7 +108,26 @@ export default props => {
                     onChange={handleControlledInputChange}
                     />
             </div>
+            
                     </fieldset>
+                    <fieldset>
+                        
+                        <div className="form-group">
+                            <label htmlFor="item">Item</label>
+                            <input
+                                type="text"
+                                id="item"
+                                name="item"
+                                defaultValue={charityRequest.item}
+                                required
+                                className="form-control"
+                                proptype="varchar"
+                                placeholder="Item"
+                                onChange={handleControlledInputChange}
+                                />
+                        </div>
+                        
+                                </fieldset>
                     <fieldset>
                 <div className="form-group">
                     <label htmlFor="business">Business </label>
