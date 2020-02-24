@@ -14,28 +14,48 @@ export default (props) => {
 
     return (
         <>
+        <section className="requests">
+        <div className="pending">
+    <div className="header">
         <h1>REQUESTS: PENDING</h1>
-        <div className="requests">
+        </div>
+            <div className="pendingCards">
             {activeUserRequests.map(cr => {
                 return <CharityRequest key={cr.id} charityRequest={cr} {...props} />
-             }) }
-             
-        </div>
-            <h1>REQUESTS: COMPLETED</h1>
-            <div className="requests">
+            }) }
+            </div>
+            </div>
+            <div>
+
+           <div className="completed">
+
+               <div className="header">
+                   <h1>REQUESTS: COMPLETED</h1>
+                   </div> 
+               </div>
+               <div className="completedCards">
+
+    
                 {activeUserCompletedRequests.map(dr => {
                     return <Donation key={dr.id} donation={dr} {...props} />
-                 }) }
+                }) }
                  
-            </div>
+                </div>
+                </div>
         
-            <h1>YOUR DONATIONS</h1>
-            <div className="donations">
+           <div>
+               <div className="header">
+
+               <h1>YOUR DONATIONS</h1>
+               </div>
+            <div>
                 {activeUserDonations.map(d => {
                     return <Donation key={d.id} donation={d} {...props} />
-                 }) }
+                }) }
                  
+                    </div> 
             </div>
+                </section>
         </>
     )
 }

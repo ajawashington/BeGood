@@ -56,7 +56,7 @@ export default props => {
                 businessId: businessId,
                 userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
-                .then(() => props.history.push("/"))
+                .then(() => props.history.push("/donor"))
         } else {
             addCharityRequest({
                 issue: charityRequest.issue,
@@ -65,7 +65,8 @@ export default props => {
                 businessId: businessId,
                 userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
-            .then(() => props.history.push("/"))
+            
+            .then(() => props.history.push("/donor"))
         }
         }
     
@@ -73,7 +74,7 @@ export default props => {
 
     return (
         <form className="CharityRequestForm">
-            <h2 className="CharityRequestForm__title">{editMode ? "Edit Charity Request" : "New Charity Request"}</h2>
+            <h2 className="CharityRequestForm__title">{editMode ? "EDIT CHARITY REQUEST" : "NEW CHARITY REQUEST"}</h2>
             <fieldset>
 
             <div className="form-group">

@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import "./CharityRequests.css"
 import { CharityRequestContext } from "./CharityRequestProvider";
 import { DonationContext } from "../donations/DonationProvider";
+import formation from "./formation.jpg"
 
 
 export default ({ charityRequest, history, match }) => {
@@ -68,7 +69,7 @@ export default ({ charityRequest, history, match }) => {
     
     onClick={
         () => {
-         
+            window.alert("'OK' to Confirm Donation")
                 completedCharityRequest(charityRequest)
                 deleteCharityRequest(charityRequest)
             
@@ -78,9 +79,15 @@ export default ({ charityRequest, history, match }) => {
     }}
 
             return(
-                // here is what will render on each card on every page 
-            <section className="charityRequest">
-                <h3 className="charityRequest__tagName">{charityRequest.user.tagName} needs {charityRequest.item}. </h3>
+                <>
+                <section className="charityRequest">
+                    <div>
+
+              
+                   <img className="img" src={charityRequest.user.url}/> 
+                <h3>{charityRequest.user.tagName} needs {charityRequest.item}. 
+                </h3>
+                    </div>
                 <div>The issue is "{charityRequest.issue}"</div>
                 {/* <div className="charityRequest__issue">{charityRequest.issue}</div> */}
                 <div className="charityRequest__amount">This will cost { charityRequest.amount } at { charityRequest.business.name }</div>
@@ -88,6 +95,7 @@ export default ({ charityRequest, history, match }) => {
                 {activeUserRequests(charityRequest, history)}
 
             </section>
+            </>
         
         )
 

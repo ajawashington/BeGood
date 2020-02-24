@@ -60,7 +60,7 @@ const Login = props => {
                         <input ref={tagName} type="tagName"
                             id="tagName"
                             className="form-control"
-                            placeholder="tag name"
+                            placeholder="Enter Tag Name Here"
                             required autoFocus />
                     </fieldset>
                     <fieldset>
@@ -68,7 +68,7 @@ const Login = props => {
                         <input ref={password} type="password"
                             id="password"
                             className="form-control"
-                            placeholder="Password"
+                            placeholder="Enter Password Here"
                             required />
                     </fieldset>
                     <fieldset>

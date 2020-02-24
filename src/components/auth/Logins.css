@@ -1,6 +1,9 @@
 
 .h1, h1 {
     font-size: 2.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+
 }
 
 fieldset {
@@ -8,22 +11,33 @@ fieldset {
     padding: 1rem 0;
     margin: 0;
     border: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+
 }
 
 .form--login {
     display: inline-block;
     margin: 0 auto;
     text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+
 }
 
-.form--login > fieldset > input[type="email"],
+.form--login > fieldset > input[type="tagName"],
 .form--login > fieldset > input[type="password"] {
     width: 25em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+
 }
 
 .label--login {
     width: 8rem;
     display: inline-block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 .form-control {
@@ -41,10 +55,15 @@ fieldset {
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+
 }
 
 .container--login {
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
 }
 
 .body {
@@ -55,4 +74,7 @@ fieldset {
     min-width: 45rem;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
 }
+

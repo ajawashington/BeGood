@@ -11,7 +11,7 @@ export default (props) => {
     
     return (
         <>
-        <h1>PENDING REQUESTS</h1>
+        <h1 className="donationHeader">PENDING REQUESTS</h1>
         <div className="charityRequests">
             {
             activeCharityRequest.map(c => {

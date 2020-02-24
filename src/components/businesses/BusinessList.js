@@ -11,10 +11,13 @@ export default (props) => {
 
     return (
         <>
-        <h1>
-            PARTNERS
+        <div>
+
+        <h1 className="businessHeader">
+            BUSINESS PARTNERS
         </h1>
-        <div className="businesss">
+        </div>
+        <div className="businesses">
             {
                 businesses.map(business => {
                     const type = businessTypes.find(l => l.id === business.businessTypeId)
@@ -33,4 +36,3 @@ export default (props) => {
              
     )
 }
-

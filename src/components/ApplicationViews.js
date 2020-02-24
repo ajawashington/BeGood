@@ -15,8 +15,8 @@ export default props => {
      <ProviderProvider>
      <Route exact path="/business" render={props => <BusinessList {...props} />} />
 
-        <Route exact path="/" render={props => <CharityRequestForm {...props} />} />
      <Route exact path="/businesses/:businessId(\d+)" render={props => <BusinessDetails {...props} />} />
+        <Route exact path="/" render={props => <CharityRequestForm {...props} />} />
         <Route exact path="/" render={props => <DonationList {...props} />} />
         <Route exact path="/donor" render={props => <CharityRequestList {...props} />} />
         <Route path="/:charityRequestId(\d+)"render={props => <CharityRequestForm {...props} />} />

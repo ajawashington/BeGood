@@ -6,12 +6,11 @@ import logo from "./logo.jpg"
 export default (props) => {
     return (
         <ul className="navbar">
-            <li>
-                <Link className="navbar__logo" to="/"><img src={logo}/></Link>
-            </li>
-            {/* <li className="navbar__item">
-                <Link className="navbar__link" to="/charity">Charity</Link>
-            </li> */}
+           
+                <Link className="navbar__link" to="/">
+                <img src={logo}/>
+                </Link>
+                
             <li className="navbar__item">
                 <Link className="navbar__link" to="/donor">MAKE A DONATION</Link>
             </li>

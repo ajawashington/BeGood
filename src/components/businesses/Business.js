@@ -3,13 +3,16 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 export default ({ business }) => (
-    <section className="business">
-        <h2 className="business__name">
-            <Link to={`/businesses/${business.id}`}>
-                { business.name }
-            </Link>
-        </h2>
-        <h3 className="business__breed">{ business.address }</h3>
-        <div className="business__breed">{ business.businessType.type }</div>
-    </section>
+    <div className="businesses">
+       <div className="business__item">
+       <div>
+           <h1 className="business__link"><Link className="business__link" to={`/businesses/${business.id}`}>{ business.name }</Link></h1>
+           </div> 
+       <div>
+           <h2 className="business__link">{ business.businessType.type }</h2>
+           </div> 
+       </div>
+    </div>
+
+
 )

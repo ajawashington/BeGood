@@ -2,6 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router } from "react-router-dom"
 import BeyGood from "./components/BeyGood"
+import './custom.scss';
 // import { TrackerProvider, Tracker } from 'react-tracker'
 // import { trackProductClick } from './tracking/donationsAndRequests/completed'
 
