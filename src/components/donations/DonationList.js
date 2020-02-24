@@ -14,13 +14,13 @@ export default (props) => {
 
     return (
         <>
-            <h1>YOUR DONATIONS</h1>
-            <div className="donations">
-                {activeUserDonations.map(d => {
-                    return <Donation key={d.id} donation={d} {...props} />
-                 }) }
-                 
-            </div>
+        <h1>REQUESTS: PENDING</h1>
+        <div className="requests">
+            {activeUserRequests.map(cr => {
+                return <CharityRequest key={cr.id} charityRequest={cr} {...props} />
+             }) }
+             
+        </div>
             <h1>REQUESTS: COMPLETED</h1>
             <div className="requests">
                 {activeUserCompletedRequests.map(dr => {
@@ -28,14 +28,14 @@ export default (props) => {
                  }) }
                  
             </div>
-            <h1>REQUESTS: PENDING</h1>
-            <div className="requests">
-                {activeUserRequests.map(cr => {
-                    return <CharityRequest key={cr.id} charityRequest={cr} {...props} />
+        
+            <h1>YOUR DONATIONS</h1>
+            <div className="donations">
+                {activeUserDonations.map(d => {
+                    return <Donation key={d.id} donation={d} {...props} />
                  }) }
                  
             </div>
-            
         </>
     )
 }

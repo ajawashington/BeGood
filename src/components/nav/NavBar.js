@@ -1,22 +1,22 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
+import logo from "./logo.jpg"
 
 export default (props) => {
     return (
         <ul className="navbar">
-            
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/">Home</Link>
+            <li>
+                <Link className="navbar__logo" to="/"><img src={logo}/></Link>
             </li>
-            <li className="navbar__item">
+            {/* <li className="navbar__item">
                 <Link className="navbar__link" to="/charity">Charity</Link>
+            </li> */}
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/donor">MAKE A DONATION</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/donor">Donor</Link>
-            </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/business">Partners</Link>
+                <Link className="navbar__link" to="/business">BUSINESS PARTNERS</Link>
             </li>
 
 

@@ -2,7 +2,7 @@
 .donations {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .donation {
@@ -10,4 +10,6 @@
     margin: 1em;
     padding: 1em;
     border: 1px solid goldenrod;
+    font-family: Optima;
 }
+

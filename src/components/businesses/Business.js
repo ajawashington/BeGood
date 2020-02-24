@@ -1,10 +1,15 @@
 import React from "react"
-import "./Businesses.css"
+// import "./businesss.css"
+import { Link } from "react-router-dom"
 
-export default ({business }) => (
+export default ({ business }) => (
     <section className="business">
-        <h3 className="business__name"> { business.name }</h3>
-        <div>ADDRESS: {business.address}</div>
-        <div className="business__businessType">TYPE: { business.businessType.type }</div>
+        <h2 className="business__name">
+            <Link to={`/businesses/${business.id}`}>
+                { business.name }
+            </Link>
+        </h2>
+        <h3 className="business__breed">{ business.address }</h3>
+        <div className="business__breed">{ business.businessType.type }</div>
     </section>
 )

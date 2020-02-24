@@ -1,18 +1,3 @@
-body:after{
-    content: "";
-    background: url(/src/components/imgs/beyonceinsta-4.jpg) no-repeat center center fixed; 
-    background-size: 100% 100%;
-    height: 100%;
-    overflow: hidden;
-    opacity: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: 1;   
-      
-  }
 
 .h1, h1 {
     font-size: 2.5rem;
@@ -62,12 +47,12 @@ fieldset {
     text-align: center;
 }
 
-.form--login {
+.body {
     background-position-x: right;
-    z-index: 1;
+    background-image: url(/qjfqblnqwej2huvrjgjl.gif);
+    z-index: -1;
     min-height: 25rem;
     min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
 }

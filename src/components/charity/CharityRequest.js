@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import "./CharityRequests.css"
 import { CharityRequestContext } from "./CharityRequestProvider";
 import { DonationContext } from "../donations/DonationProvider";
-import { DonorContext } from "../donations/DonorProvider";
 
 
 export default ({ charityRequest, history, match }) => {
@@ -38,7 +37,9 @@ export default ({ charityRequest, history, match }) => {
     
     <div> 
        <button className="active__charityRequest" onClick={() => {
-               history.push(`/charity/edit/${charityRequest.id}`)
+        
+                history.push(`/${charityRequest.id}`)
+            
             }}>Edit</button>
 
         <button onClick={

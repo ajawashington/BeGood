@@ -11,7 +11,7 @@ export default (props) => {
     
     return (
         <>
-        <h1>Pending Requests</h1>
+        <h1>PENDING REQUESTS</h1>
         <div className="charityRequests">
             {
             activeCharityRequest.map(c => {

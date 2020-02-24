@@ -56,7 +56,7 @@ export default props => {
                 businessId: businessId,
                 userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
-                .then(() => props.history.push("/donor"))
+                .then(() => props.history.push("/"))
         } else {
             addCharityRequest({
                 issue: charityRequest.issue,
@@ -65,7 +65,7 @@ export default props => {
                 businessId: businessId,
                 userId: parseInt(localStorage.getItem("beyGood_user"), 10)
             })
-            .then(() => props.history.push("/donor"))
+            .then(() => props.history.push("/"))
         }
         }
     

@@ -8,11 +8,19 @@
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.88);
 }
 
+.navbar__logo {
+
+    width: 10px;
+    height: 10px;
+
+
+}
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
     text-decoration: none;
     color: white;
+
 
 
 }

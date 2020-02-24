@@ -3,21 +3,24 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body:after{
-    content: "";
-    background: url(/src/components/imgs/beyonceinsta-4.jpg) no-repeat center center fixed; 
-    background-size: 100% 100%;
-    height: 100%;
-    overflow: hidden;
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-      
-  }
+body:before{
+  content: "";
+  /* background: url("./imgs/qjfqblnqwej2huvrjgjl.gif") no-repeat center center 0; */
+  transition-delay: 0s;
+  background-size: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+
+
+ }
+
 button,
 input,
 select,

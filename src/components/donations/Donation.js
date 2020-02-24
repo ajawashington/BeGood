@@ -10,7 +10,7 @@ export default ({ donation }) => (
         </h3>
 <section className="donation__user">Thank you for your generous donation you made to { donation.user.tagName} for the amount of { donation.amount }!</section>
         <br></br>
-<div className="donation__business">Your collaboration with { donation.business.name } helped {donation.user.tagName} with: { donation.issue }</div>
+<div className="donation__business">The collaboration between { donation.business.name } and { donation.donor.tagName} helped {donation.user.tagName}.</div>
     </section>
 )
 

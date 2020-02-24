@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Logins.css"
+import logo from "../nav/logo.jpg"
 
 
 const Login = props => {
@@ -52,7 +53,7 @@ const Login = props => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>beyGood</h1>
+                    <h1><img src={logo}/></h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputtagName"> Tag Name </label>
