@@ -3,6 +3,7 @@ import { CharityRequestContext } from "../charity/CharityRequestProvider"
 import { BusinessTypeContext } from "./BusinessTypeProvider"
 import { BusinessContext } from "./BusinessProvider"
 import "./Businesses.css"
+import CharityRequest from "../charity/CharityRequest"
 
 export default (props) => {
     const { businesses } = useContext(BusinessContext)
@@ -10,22 +11,26 @@ export default (props) => {
     const { charityRequests } = useContext(CharityRequestContext)
 
     const chosenBusinessId = parseInt(props.match.params.businessId, 10)
-    const showCharityRequestId = parseInt(props.match.params.charityRequestId, 10)
 
     const business = businesses.find(a => a.id === chosenBusinessId) || {}
-    const charityRequest = charityRequests.find(c => c.id === showCharityRequestId) || {}
-    const businessRequests = charityRequests.find(b => b.id === charityRequest.charityRequestId)
+    const businessRequests = charityRequests.filter(b => b.businessId === chosenBusinessId)
 
     return (
         <>
-        <section className="business">
-            <h1 className="business__name">{business.name}</h1>
-          <h4 className="business__breed">Address: { business.address }</h4>
-        </section>
-            <div className="business__requests">
+        <div>
 
-            <div>The issue is {charityRequest.issue}</div>
-                <div>This will cost { charityRequest.amount } at { business.name }</div>
+        <section className="businessHeader" >
+            <div>
+            <h1>{business.name}</h1>
+            </div>
+            <div>
+                
+            </div>
+          <h4 >Address: { business.address }</h4>
+        </section>
+        </div>
+            <div className="business__requests">
+            {businessRequests.map(br => <CharityRequest key={br.id} charityRequest={br} />)}
             </div>
     </>
     )
