@@ -1,19 +1,21 @@
 import React, { useContext } from "react"
 import { CharityRequestContext } from "../charity/CharityRequestProvider"
-import { BusinessTypeContext } from "./BusinessTypeProvider"
+import { DonationContext } from "../donations/DonationProvider"
 import { BusinessContext } from "./BusinessProvider"
 import "./Businesses.css"
 import CharityRequest from "../charity/CharityRequest"
+import Donation from "../donations/Donation"
 
 export default (props) => {
     const { businesses } = useContext(BusinessContext)
-    const { businessTypes } = useContext(BusinessTypeContext)
+    const { donations } = useContext(DonationContext)
     const { charityRequests } = useContext(CharityRequestContext)
 
     const chosenBusinessId = parseInt(props.match.params.businessId, 10)
 
     const business = businesses.find(a => a.id === chosenBusinessId) || {}
     const businessRequests = charityRequests.filter(b => b.businessId === chosenBusinessId)
+    const businessDonations = donations.filter(d => d.businessId === chosenBusinessId)
 
     return (
         <>
@@ -31,6 +33,7 @@ export default (props) => {
         </div>
             <div className="business__requests">
             {businessRequests.map(br => <CharityRequest key={br.id} charityRequest={br} />)}
+            {businessDonations.map(d => <Donation key={d.id} donation={d} />)}
             </div>
     </>
     )

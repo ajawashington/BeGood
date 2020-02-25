@@ -5,7 +5,10 @@ export default ({ donation }) => (
     <section className="donation">
         <div>
 
-        <img className="img" src={donation.user.url}/> 
+        {donation.user.tagName} 
+        <div>
+                <img className="img" src={donation.user.url}/> 
+                </div>
         </div>
                 
         Thank you for your generous donation you made to { donation.user.tagName} for the amount of { donation.amount }! 
