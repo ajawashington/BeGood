@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/beygood/static/css/main.4541bdd0.chunk.css",
+    "main.js": "/beygood/static/js/main.d63c90dd.chunk.js",
+    "main.js.map": "/beygood/static/js/main.d63c90dd.chunk.js.map",
+    "runtime-main.js": "/beygood/static/js/runtime-main.141a14ba.js",
+    "runtime-main.js.map": "/beygood/static/js/runtime-main.141a14ba.js.map",
+    "static/js/2.60d0809b.chunk.js": "/beygood/static/js/2.60d0809b.chunk.js",
+    "static/js/2.60d0809b.chunk.js.map": "/beygood/static/js/2.60d0809b.chunk.js.map",
+    "index.html": "/beygood/index.html",
+    "precache-manifest.3c0fe0f1900e974c2eeaa521722dc334.js": "/beygood/precache-manifest.3c0fe0f1900e974c2eeaa521722dc334.js",
+    "service-worker.js": "/beygood/service-worker.js",
+    "static/css/main.4541bdd0.chunk.css.map": "/beygood/static/css/main.4541bdd0.chunk.css.map",
+    "static/js/2.60d0809b.chunk.js.LICENSE.txt": "/beygood/static/js/2.60d0809b.chunk.js.LICENSE.txt",
+    "static/media/NavBar.css": "/beygood/static/media/boy.bdd21f99.gif",
+    "static/media/formation.jpg": "/beygood/static/media/formation.9ec30610.jpg",
+    "static/media/logo.jpg": "/beygood/static/media/logo.44a0b38e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.141a14ba.js",
+    "static/js/2.60d0809b.chunk.js",
+    "static/css/main.4541bdd0.chunk.css",
+    "static/js/main.d63c90dd.chunk.js"
+  ]
+}
