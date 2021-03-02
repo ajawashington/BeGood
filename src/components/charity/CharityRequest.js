@@ -18,7 +18,7 @@ export default ({ charityRequest, history, match }) => {
                 item: charityRequest.item,
                 userId: charityRequest.userId,
                 businessId: charityRequest.businessId, 
-                donorId: parseInt(localStorage.getItem("beyGood_user"), 10),
+                donorId: parseInt(localStorage.getItem("BeGood_user"), 10),
             })}
 
             // here is what the function will be looking for to POST to database. this is was going to happen 
@@ -33,7 +33,7 @@ export default ({ charityRequest, history, match }) => {
         // if the request user id matches the active user than edit and delete buttons will render
         // those buttons push the object to "editMode" on list or deletes from database
 
-    if(charityRequest.userId === parseInt(localStorage.getItem("beyGood_user"), 10)){
+    if(charityRequest.userId === parseInt(localStorage.getItem("BeGood_user"), 10)){
     return(
     
     <div> 

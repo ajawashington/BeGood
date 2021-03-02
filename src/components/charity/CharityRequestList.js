@@ -7,7 +7,7 @@ import "./CharityRequests.css"
 export default (props) => {
 
     const { charityRequests } = useContext(CharityRequestContext)
-    const activeCharityRequest = charityRequests.sort(c => c.id === parseInt(localStorage.getItem("beyGood_user")))
+    const activeCharityRequest = charityRequests.sort(c => c.id === parseInt(localStorage.getItem("BeGood_user")))
     
     return (
         <>

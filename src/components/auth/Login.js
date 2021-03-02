@@ -25,7 +25,7 @@ const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
-                    localStorage.setItem("beyGood_user", exists.id)
+                    localStorage.setItem("BeGood_user", exists.id)
                     props.history.push("/")
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
@@ -42,7 +42,7 @@ const Login = props => {
                     })
                         .then(_ => _.json())
                         .then(response => {
-                            localStorage.setItem("beyGood_user", response.id)
+                            localStorage.setItem("BeGood_user", response.id)
                             props.history.push("/")
                         })
                 }

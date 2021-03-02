@@ -20,13 +20,13 @@ export default (props) => {
 
 
 {
-    localStorage.getItem("beyGood_user")
+    localStorage.getItem("BeGood_user")
         ? <li className="navbar__item">
             <Link className="navbar__link"
                 to=""
                 onClick={e => {
                     e.preventDefault()
-                    localStorage.removeItem("beyGood_user")
+                    localStorage.removeItem("BeGood_user")
                     props.history.push("/")
                 }}
             >Logout</Link>

@@ -36,7 +36,7 @@ const Register = props => {
                         .then(_ => _.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                localStorage.setItem("beyGood_user", createdUser.id)
+                                localStorage.setItem("BeGood_user", createdUser.id)
                                 props.history.push("/")
                             }
                         })
@@ -49,7 +49,7 @@ const Register = props => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for beyGood</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for BeGood</h1>
                 <fieldset>
                     <label htmlFor="inputtagName"> Tag Name </label>
                     <input ref={tagName} type="tagName"

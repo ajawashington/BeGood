@@ -54,7 +54,7 @@ export default props => {
                 amount: charityRequest.amount,
                 item: charityRequest.item,
                 businessId: businessId,
-                userId: parseInt(localStorage.getItem("beyGood_user"), 10)
+                userId: parseInt(localStorage.getItem("BeGood_user"), 10)
             })
                 .then(() => props.history.push("/donor"))
         } else {
@@ -63,7 +63,7 @@ export default props => {
                 amount: charityRequest.amount,
                 item: charityRequest.item,
                 businessId: businessId,
-                userId: parseInt(localStorage.getItem("beyGood_user"), 10)
+                userId: parseInt(localStorage.getItem("BeGood_user"), 10)
             })
             
             .then(() => props.history.push("/donor"))

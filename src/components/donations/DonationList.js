@@ -8,9 +8,9 @@ import { CharityRequestContext } from "../charity/CharityRequestProvider"
 export default (props) => {
     const { donations } = useContext(DonationContext)
     const { charityRequests } = useContext(CharityRequestContext)
-    const activeUserDonations = donations.filter(d => d.donorId === parseInt(localStorage.getItem("beyGood_user")))
-    const activeUserRequests = charityRequests.filter(cr => cr.userId === parseInt(localStorage.getItem("beyGood_user")) )
-    const activeUserCompletedRequests = donations.filter(dr => dr.userId === parseInt(localStorage.getItem("beyGood_user")) )
+    const activeUserDonations = donations.filter(d => d.donorId === parseInt(localStorage.getItem("BeGood_user")))
+    const activeUserRequests = charityRequests.filter(cr => cr.userId === parseInt(localStorage.getItem("BeGood_user")) )
+    const activeUserCompletedRequests = donations.filter(dr => dr.userId === parseInt(localStorage.getItem("BeGood_user")) )
 
     return (
         <>
