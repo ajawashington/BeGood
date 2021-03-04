@@ -1,11 +1,16 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import { BrowserRouter as Router } from "react-router-dom"
-import BeGood from "./components/BeGood"
 
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Root from 'Root'
+import App from 'components/App'
 
 ReactDOM.render(
-    <Router>
-        <BeGood/>
-    </Router>
-    , document.getElementById("root"))
+  <Root>
+    <BrowserRouter>
+      <Route path="/" component={App} />
+    </BrowserRouter>
+  </Root>
+  ,
+  document.getElementById('root')
+)

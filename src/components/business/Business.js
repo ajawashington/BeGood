@@ -1,5 +1,4 @@
 import React from "react"
-// import "./businesss.css"
 import { Link } from "react-router-dom"
 
 export default ({ business }) => (

@@ -1,30 +1,34 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import CharityRequestList from "./charity/CharityRequestList";
-import CharityRequestForm from "./charity/CharityRequestForm";
-import DonationList from "./donations/DonationList";
-import ProviderProvider from "./ProviderProvider";
-// import DashboardList from "./dashboard/DashboardList"
-import BusinessList from "./businesses/BusinessList";
-import BusinessDetails from "./businesses/BusinessDetails";
+import { Switch, Route } from "react-router-dom";
+import DataProvider from "./DataProvider";
+import BusinessList from "./business/BusinessList";
+// import CharityRequestList from "./charity/CharityRequestList";
+// import CharityRequestForm from "./charity/CharityRequestForm";
+// import DonationList from "./donations/DonationList";
+// import BusinessDetails from "./business/BusinessDetails";
+// import ProfilePage from "./ProfilePage";
 
 export default (props) => {
   return (
     <>
-      <ProviderProvider>
-        <Route
+      <DataProvider>
+        {/* <Route
           exact
-          path="/business"
-          render={(props) => <BusinessList {...props} />}
-        />
-        <Route
+          path="/profile"
+          render={(props) => <ProfilePage {...props} />}
+        /> */}
+        <Switch>
+          <Route exact path={["/", "/businesses"]} component={BusinessList} />
+          {/* <Route exact path="/add" component={BusinessForm} /> */}
+        </Switch>
+        {/* <Route
           exact
           path="/businesses/:businessId(\d+)"
           render={(props) => <BusinessDetails {...props} />}
         />
         <Route
           exact
-          path="/"
+          path="/request"
           render={(props) => <CharityRequestForm {...props} />}
         />
         <Route exact path="/" render={(props) => <DonationList {...props} />} />
@@ -36,8 +40,8 @@ export default (props) => {
         <Route
           path="/:charityRequestId(\d+)"
           render={(props) => <CharityRequestForm {...props} />}
-        />
-      </ProviderProvider>
+        /> */}
+      </DataProvider>
     </>
   );
 };

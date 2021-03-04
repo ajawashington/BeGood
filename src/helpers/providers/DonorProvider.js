@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from "react"
+import dotenv from "dotenv";
+dotenv.config();
 
-/*
-    The context is imported and used by individual components
-    that need data
-*/
 export const DonorContext = React.createContext()
+const dbURL = process.env.REACT_APP_DATABASE_URL;
 
-/*
- This component establishes what data can be used.
- */
 export const DonorProvider = (props) => {
     const [donors, setDonors] = useState([])
 
     const getDonors = () => {
-        return fetch("http://localhost:4444/donors?_expand=user")
+        return fetch(`${dbURL}/begood/donors.json`)
             .then(res => res.json())
             .then(setDonors)
     }
 
     const addDonor = donor => {
-        return fetch("http://localhost:4444/donors", {
+        return fetch(`${dbURL}/begood/donors.json`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -34,7 +30,6 @@ export const DonorProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  Donor APPLICATION STATE CHANGED  ****")
     }, [donors])
 
     return (

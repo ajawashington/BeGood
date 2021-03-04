@@ -7,7 +7,7 @@ export default ({ donation }) => (
 
         {donation.user.tagName} 
         <div>
-                <img className="img" src={donation.user.url}/> 
+                <img alt="user_img" src={donation.user.url}/> 
                 </div>
         </div>
                 

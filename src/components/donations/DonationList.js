@@ -1,9 +1,8 @@
 import React, { useContext } from "react"
-import { DonationContext } from "./DonationProvider"
+import { DonationContext } from "../../helpers/providers/DonationProvider"
 import Donation from "./Donation"
-import "./Donations.css"
 import CharityRequest from "../charity/CharityRequest"
-import { CharityRequestContext } from "../charity/CharityRequestProvider"
+import { CharityRequestContext } from "../../helpers/providers/CharityRequestProvider"
 
 export default (props) => {
     const { donations } = useContext(DonationContext)

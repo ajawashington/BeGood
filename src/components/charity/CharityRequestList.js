@@ -1,8 +1,7 @@
   
 import React, { useContext } from "react"
-import { CharityRequestContext } from "./CharityRequestProvider"
+import { CharityRequestContext } from "../../helpers/providers/CharityRequestProvider"
 import CharityRequest from "./CharityRequest"
-import "./CharityRequests.css"
 
 export default (props) => {
 
